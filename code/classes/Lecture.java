@@ -7,14 +7,15 @@ public class Lecture {
    int les_id;
    int participants;
    int id;
+   Date date;
    
-
-    public Lecture( String classroom, int les_id, int id) {
+    public Lecture( String classroom, int les_id, int id, Date date) {
         
         this.classroom = classroom;
         this.les_id = les_id;
         participants = 0;
         this.id = id;
+        this.date = date;
     }
 
    
@@ -34,7 +35,13 @@ public class Lecture {
         this.id = id;
     }
 
-  
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public String getClassroom() {
         return classroom;
@@ -50,6 +57,14 @@ public class Lecture {
 
     public int getId() {
         return id;
+    }
+    
+    public boolean check_dates(Date date, String classroom, int les_id, int id, int total_votes, int positive_votes) {
+        if ((total_votes-positive_votes) <= positive_votes){
+            Lecture new_lecture = new Lecture(classroom, les_id, id, date);
+            return true;
+        }
+        return false;
     }
 
     
