@@ -14,9 +14,7 @@ public class lesson {
         this.year = year;
         professorId = 0;
     }
-	
-        
-	//setters,getters
+//setters,getters
   public void setName(String n){
      name=n; 
   }
@@ -37,20 +35,13 @@ public class lesson {
   public int getYear(){
      return year;
   }
-  
-  
+ 
   //methods
   public void linkProfessor(Professor p, lesson L){
-	  L.professorId=p.getProfId();
-          
-	  p.setNumberOfLessons((p.getNumberOfLessons())+1);
-	  p.getProfLessons().add(L);
-	  
+    L.professorId=p.getProfId();
+
+    p.setNumberOfLessons((p.getNumberOfLessons())+1);
+    p.getProfLessons().add(L);
   }
 	
 	
-	
-
-
-
-}

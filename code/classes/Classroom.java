@@ -58,6 +58,10 @@ public class Classroom {
         this.id = id;
     }
     
+    public int calc_overflow(Classroom classroom, int students ) {
+        int calc = classroom.capacity - students;
+        return calc;
+    }
     
     
     
